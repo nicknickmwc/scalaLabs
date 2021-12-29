@@ -33,23 +33,29 @@ case class None[A]()     extends Option[A] {
 object Compositions {
 
   // a) Используйте данные функции. Вы можете реализовать свое решение прямо в тестовой функции.
-  // Нельзя менять сигнатуры 
+  // Нельзя менять сигнатуры
 
   def testCompose[A, B, C, D](f: A => B)
                              (g: B => C)
-                             (h: C => D): A => D = ???
+                             (h: C => D): A => D = (a:A) => h(g(f(a)))
 
   // b) Напишите функции с использованием `map` и `flatMap`. Вы можете реализовать свое решение прямо в тестовой функции.
-  // Нельзя менять сигнатуры 
+  // Нельзя менять сигнатуры
 
   def testMapFlatMap[A, B, C, D](f: A => Option[B])
                                 (g: B => Option[C])
-                                (h: C => D): Option[A] => Option[D] = ???
+                                (h: C => D): Option[A] => Option[D] = (a: Option[A]) => a.flatMap(f).flatMap(g).map(h)
 
   // c) Напишите функцию используя for. Вы можете реализовать свое решение прямо в тестовой функции.
-  // Нельзя менять сигнатуры 
+  // Нельзя менять сигнатуры
 
   def testForComprehension[A, B, C, D](f: A => Option[B])
                                       (g: B => Option[C])
-                                      (h: C => D): Option[A] => Option[D] = ???
+                                      (h: C => D): Option[A] => Option[D] = (a:Option[A]) =>
+    for {
+      func1 <- a
+      func2 <- f(func1)
+      func3 <- g(func2)
+
+    } yield h(func3)
 }

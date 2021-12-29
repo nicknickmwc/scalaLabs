@@ -29,7 +29,7 @@ object tasks {
     return n
   }
   def product1(s:String):Int={
-    if (s.length()>1) return s.take(1).charAt(0).toInt*product(s.drop(1))
+    if (s.length()>1) return s.take(1).charAt(0).toInt*product1(s.drop(1))
     else return s.charAt(0)
   }
   def xn(n:Int)(x:Int)(y:Int): Int = n > 0 match {

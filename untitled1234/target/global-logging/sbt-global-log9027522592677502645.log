@@ -1,7 +1,0 @@
-[debug] > Exec(all {file:/C:/Users/Nikolai/Desktop/ScalaLabs/untitled1234/}untitled1234/products {file:/C:/Users/Nikolai/Desktop/ScalaLabs/untitled1234/}untitled1234/test:products, None, None)
-[debug] Evaluating tasks: Compile / products, Test / products
-[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
-[success] Total time: 0 s, completed 14.11.2021 19:02:21
-[debug] > Exec(idea-shell, None, None)
-[debug] > Exec(, None, None)
-[debug] > Exec(idea-shell, None, None)
